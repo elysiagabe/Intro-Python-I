@@ -39,27 +39,20 @@ from datetime import date
 
 # ORIGINAL SOLUTION: 
 def show_cal(*args):
+    # Error if user submits too many args
     if len(args) > 3: 
           print("Oops! Please pass in the month and year only.")
           sys.exit()
-
+    # Sets month variable
     if len(args) > 1:
         m = int(args[1])
     else: 
         m = date.today().month
-
+    # Sets year variable
     if len(args) > 2:
         y = int(args[2])
     else: 
         y = date.today().year
-
     print(calendar.month(y, m))
-
-# SECOND SOLUTION: 
-# def show_cal(a, m = date.today().month, y = date.today().year):
-#     if len() > 3: 
-#         print("Oops! Please enter the month and year only.")
-#     else:
-#         print(calendar.month(int(y), int(m)))
 
 show_cal(*sys.argv)

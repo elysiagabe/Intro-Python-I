@@ -6,21 +6,24 @@ the list should be populated.
 
 Take a look at https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
 for more info regarding list comprehensions.
+
+GENERAL FORMAT FOR LIST COMPREHENSION: 
+[<map expression> for <name> in <sequence expression> if <filter experession>]
 """
 
 # Write a list comprehension to produce the array [1, 2, 3, 4, 5]
 
-y = []
-for x in range(1,6):
-    y.append(x)
+y = [x for x in range(1,6)]
+# for x in range(1,6):
+#     y.append(x)
 print (y)
 
 # Write a list comprehension to produce the cubes of the numbers 0-9:
 # [0, 1, 8, 27, 64, 125, 216, 343, 512, 729]
 
-y = []
-for x in range(10):
-    y.append((x ** 3))
+y = [x**3 for x in range(10)]
+# for x in range(10):
+#     y.append((x ** 3))
 print(y)
 
 # Write a list comprehension to produce the uppercase version of all the
@@ -28,9 +31,9 @@ print(y)
 
 a = ["foo", "bar", "baz"]
 
-y = []
-for a in a:
-    y.append(a.upper())
+y = [a.upper() for a in a]
+# for a in a:
+#     y.append(a.upper())
 print(y)
 
 # Use a list comprehension to create a list containing only the _even_ elements
