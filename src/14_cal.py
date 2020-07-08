@@ -29,4 +29,30 @@ it should use today’s date to get the month and year.
 
 import sys
 import calendar
-from datetime import datetime
+from datetime import date
+
+# Define a function...let's call it display_calendar
+# takes variable args...0 - 2 arguments are valid
+# if 0 args are passed in, display the current date's calendar (today's month and year)
+# if 1 arg is passed in, assume it is the month and use the current year (i will assume that they are passing in a valid number from 1-12...could later add error handling to check for this)
+# if 2 args are passed in, assume they passed in the month and the year (i will also assume the user is passing in correctly formatted data )
+
+# ORIGINAL SOLUTION: 
+def show_cal(*args):
+    # Error if user submits too many args
+    if len(args) > 3: 
+          print("Oops! Please pass in the month and year only.")
+          sys.exit()
+    # Sets month variable
+    if len(args) > 1:
+        m = int(args[1])
+    else: 
+        m = date.today().month
+    # Sets year variable
+    if len(args) > 2:
+        y = int(args[2])
+    else: 
+        y = date.today().year
+    print(calendar.month(y, m))
+
+show_cal(*sys.argv)
